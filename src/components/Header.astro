@@ -1,0 +1,52 @@
+<nav class="flex items-center justify-between sticky top-0 bg-white/95 z-10
+    lg:px-24 md:py-12 md:px-12 p-8"
+>
+    <div class="md:text-2xl text-xl font-bold">
+        <a href="/">Pizza<span class="text-red-700">lova</span></a>
+    </div>
+    <div class="uppercase gap-8 items-center hidden lg:flex">
+        <a href="/">à propos</a>
+        <a href="/">Notre carte</a>
+        <a href="/">Contact</a>
+        <a href="/" class="button button-primary">Commander</a>
+    </div>
+    <div id="nav_menu" class="hidden fixed h-screen top-0 right-0 w-[15rem] bg-white uppercase pt-24 shadow-lg pr-9">
+        <div class="absolute top-9 right-8">
+            <button title="Fermer navigation" id="nav_close">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>        
+        <div class="flex flex-col gap-6 items-end text-xl">
+            <a href="/">à propos</a>
+            <a href="/">Notre carte</a>
+            <a href="/">Contact</a>
+            <span><a href="/" class="font-medium text-red-700">Commander</a></span>
+        </div>
+    </div>
+    <button class="lg:hidden" title="Navigation menu" id="nav_toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+        </svg>          
+    </button>
+</nav>
+
+<style>
+    a:not(.button) {
+        @apply transition-all hover:opacity-75
+    }
+</style>
+
+<script>
+    const burgerButton = document.querySelector("#nav_toggle");
+    const navClose = document.querySelector("#nav_close");
+    const navMenu = document.querySelector("#nav_menu");
+    burgerButton?.addEventListener("click", () => {
+        navMenu?.classList.remove("hidden");
+    });
+    navClose?.addEventListener("click", () => {
+        navMenu?.classList.add("hidden");
+    });
+
+</script>
